@@ -27,3 +27,8 @@ Unit tests you can find at:
 [REST Controller](https://github.com/VSYD/retailshop/blob/master/src/main/java/com/example/retail/controller/RetailController.java)
 
 ### UML Diagram
+
+![uml](http://url/to/img.png)
+
+[UML](https://github.com/VSYD/retailshop/blob/master/RetailUML.uml)
+
