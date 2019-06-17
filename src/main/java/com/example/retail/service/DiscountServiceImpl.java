@@ -7,12 +7,14 @@ import com.example.retail.resources.HappyWishes;
 import com.example.retail.type.DiscountType;
 import com.example.retail.type.ProductType;
 import com.example.retail.type.UserGroup;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class DiscountServiceImpl implements DiscountService {
 
     static Short AMOUNT_OF_YEARS_FOR_CUSTOM_DISCOUNT = 2;
