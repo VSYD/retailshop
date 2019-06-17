@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.retail.controller.RetailController</OriginalElement>
+  <nodes>
+    <node x="168.0" y="294.0">com.example.retail.entity.UserAuth</node>
+    <node x="217.0" y="223.0">com.example.retail.controller.RetailController</node>
+    <node x="38.5" y="223.0">com.example.retail.entity.Product</node>
+    <node x="315.0" y="294.0">com.example.retail.entity.User</node>
+    <node x="171.0" y="0.0">org.springframework.stereotype.Service</node>
+    <node x="0.0" y="0.0">com.example.retail.service.DiscountService</node>
+    <node x="0.0" y="365.0">com.example.retail.entity.Bill</node>
+    <node x="57.5" y="76.0">com.example.retail.service.DiscountServiceImpl</node>
+    <node x="0.0" y="294.0">com.example.retail.resources.HappyWishes</node>
+    <node x="0.0" y="147.0">lombok.AllArgsConstructor</node>
+    <node x="224.0" y="147.0">org.springframework.web.bind.annotation.RestController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.retail.service.DiscountServiceImpl" target="org.springframework.stereotype.Service">
+      <point x="44.75" y="-13.0" />
+      <point x="191.75" y="51.0" />
+      <point x="218.5" y="51.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.example.retail.controller.RetailController" target="org.springframework.web.bind.annotation.RestController">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.example.retail.service.DiscountServiceImpl" target="com.example.retail.service.DiscountService">
+      <point x="-44.75" y="-13.0" />
+      <point x="102.25" y="51.0" />
+      <point x="75.5" y="51.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="com.example.retail.entity.Product" target="lombok.AllArgsConstructor">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="195.0" y="196.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
