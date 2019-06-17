@@ -28,7 +28,7 @@ Unit tests you can find at:
 
 ### UML Diagram
 
-![uml](http://url/to/img.png)
+![uml](https://github.com/VSYD/retailshop/blob/master/retailshop.png)
 
 [UML](https://github.com/VSYD/retailshop/blob/master/RetailUML.uml)
 
