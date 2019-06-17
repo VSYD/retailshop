@@ -1,6 +1,6 @@
-# Retail shop
+# Retail Shop
 
-### Discount unit
+### Discount Unit
 This unit covers three cases where we provide specific discount according to user's profile. 
 * Customer with two years experience 5%
 * Affiliate 10%
@@ -15,12 +15,15 @@ Example:
 45 = round(990/100) * 5
  
 All discount code you can find at service:
-com.example.retail.service.DiscountServiceImpl.processDiscount 
+[Discount Service Implementation](https://github.com/VSYD/retailshop/blob/master/src/main/java/com/example/retail/service/DiscountServiceImpl.java)
+ 
 
 Unit tests you can find at:
-com.example.retail.service.DiscountServiceImplTest
+[Discount Service Tests](https://github.com/VSYD/retailshop/tree/master/src/test/java/com/example/retail/service)
 
 
-### Spring boot unit
+### Spring Boot Unit
 
+[REST Controller](https://github.com/VSYD/retailshop/blob/master/src/main/java/com/example/retail/controller/RetailController.java)
 
+### UML Diagram
