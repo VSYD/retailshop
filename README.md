@@ -22,6 +22,26 @@ Unit tests you can find at:
 [Discount Service Tests](https://github.com/VSYD/retailshop/tree/master/src/test/java/com/example/retail/service)
 
 
+
+### Discount Plugin package
+In order to add new discount you need to add new class to com.example.retail.discount.
+This class must implement Discount interface and provide three aspects about the discount:
+* Usergroup - the group for user we have this discount.
+* Conditions where we apply discount.
+* Discount value. Example 5% etc.
+
+
+### Run and build
+* Maven
+
+mvn package
+
+* Run
+
+java -jar demo-0.0.1-SNAPSHOT.jar
+
+
+
 ### Spring Boot Unit
 
 [REST Controller](https://github.com/VSYD/retailshop/blob/master/src/main/java/com/example/retail/controller/RetailController.java)
