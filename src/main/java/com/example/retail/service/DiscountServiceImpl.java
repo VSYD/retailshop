@@ -12,6 +12,8 @@ import org.reflections.Reflections;
 
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -33,13 +35,31 @@ public class DiscountServiceImpl implements DiscountService {
         Set<Class<? extends Discount>> allClasses = reflections.getSubTypesOf(Discount.class);
         allClasses.forEach(e -> {
                     try {
-                        Discount discount = e.newInstance();
+                        Object discount = null;
+                        try {
+                            Constructor<?> con = e.getConstructor(User.class);
 
-                        Optional.ofNullable(discount.group()).ifPresent(t -> {
-                                    if (t.equals(group)) {
-                                        ret.setDiscountPercents(discount.getDiscount());
+                            if (con.getParameterCount() == 1) {
+                                discount = con.newInstance(user);
+                            }
+                        } catch (NoSuchMethodException | InvocationTargetException ex) {
+
+                            try {
+                                Constructor<?> con = e.getConstructor();
+                                discount = con.newInstance();
+                            } catch (InvocationTargetException | NoSuchMethodException exc) {
+                                exc.printStackTrace();
+                            }
+                        }
+
+                        Optional.ofNullable(discount).ifPresent(t ->
+
+                                Optional.ofNullable(((Discount) t).group()).ifPresent(t1 -> {
+
+                                    if (t1.equals(group)) {
+                                        ret.setDiscountPercents(((Discount) t).getDiscount());
                                     }
-                                }
+                                })
                         );
 
                     } catch (InstantiationException | IllegalAccessException ex) {
