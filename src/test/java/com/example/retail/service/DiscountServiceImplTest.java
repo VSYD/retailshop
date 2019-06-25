@@ -19,8 +19,6 @@ import static org.junit.Assert.*;
 @SpringBootTest(classes = RetailApplication.class)
 public class DiscountServiceImplTest {
 
-
-
     @Test
     public void processDiscountTwoYearsCustomerWithGroceries() {
 
@@ -29,11 +27,10 @@ public class DiscountServiceImplTest {
         User user = new User();
         user.setGroup(UserGroup.CUSTOMER);
         user.setRegistered(LocalDate.now()
-                .minusYears(DiscountServiceImpl.AMOUNT_OF_YEARS_FOR_CUSTOM_DISCOUNT)
+                .minusYears(2)
                 .minusDays(1));
 
         List<Product> productList = new ArrayList<>();
-
 
         productList.add(new Product("Pepsi", new BigDecimal("25.50"), ProductType.MINERAL_WATER));
         productList.add(new Product("Bread", new BigDecimal("17.75"), ProductType.BREAD));

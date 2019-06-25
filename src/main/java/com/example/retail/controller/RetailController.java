@@ -9,11 +9,9 @@ import com.example.retail.type.UserGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class RetailController {
 
 
     @RequestMapping(value = "/api/v1/login", method = RequestMethod.POST)
-    public void login(UserAuth userAuth) {
+    public void login(@RequestBody UserAuth userAuth) {
 
         String login = userAuth.getLogin();
         String password = userAuth.getPassword();
@@ -40,7 +38,7 @@ public class RetailController {
     // TODO create filter in order to accept incoming requests by token with converting it to User entity
 
     @RequestMapping(value = "/api/v1/get-discount", method = RequestMethod.POST)
-    public ResponseEntity<Bill> getDiscount(List<Product> productList) {
+    public ResponseEntity<Bill> getDiscount(@RequestBody List<Product> productList) {
 
         // TODO retrieve User from storage by token
 
@@ -48,8 +46,10 @@ public class RetailController {
         user.setRegistered(LocalDate.MIN);
         user.setGroup(UserGroup.CUSTOMER);
 
-        return new ResponseEntity<>(discountService
-                .processDiscount(productList, user), HttpStatus.OK);
+        Bill bill = discountService
+                .processDiscount(productList, user);
+
+        return new ResponseEntity<>(bill, HttpStatus.OK);
 
     }
 
